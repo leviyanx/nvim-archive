@@ -141,16 +141,85 @@ colorscheme default " color theme
 syntax on
 
 " highlight column and line
-set cursorcolumn
+" set cursorcolumn
 set cursorline
 
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'junegunn/fzf.vim'
+" theme fot vim
 Plug 'dracula/vim'
+" airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'majutsushi/tagbar'
+" vim markdown
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'mzlogin/vim-markdown-toc' " toc
+" markdown preview
+Plug 'iamcco/markdown-preview.nvim'
+
+" ultisnippet
+Plug 'SirVer/ultisnips'
 
 call plug#end()
 
 
+
+" python support
+let g:python_host_prog='/usr/bin/python2'
+let g:python3_host_prog='/usr/bin/python3'
+
+
+" ===
+" airline
+" ===
+
+" theme for airline
+let g:airline_theme='bubblegum'
+
+
+" latex math format
+let g:vim_markdown_math = 1
+
+
+" ===
+" markdown preview
+" ===
+
+" path of chromium to preview markdown
+let g:mkdp_path_to_chrome = '/opt/google/chrome/google-chrome'    
+let g:mkdp_auto_start = 0
+let g:mkdp_auto_close = 1
+let g:mkdp_refresh_slow = 0
+let g:mkdp_command_for_global = 0
+let g:mkdp_open_to_the_world = 0
+let g:mkdp_open_ip = ''
+let g:mkdp_browser = ''
+let g:mkdp_echo_preview_url = 0
+let g:mkdp_browserfunc = ''
+let g:mkdp_preview_options = {
+    \ 'mkit': {},
+    \ 'katex': {},
+    \ 'uml': {},
+    \ 'maid': {},
+    \ 'disable_sync_scroll': 0,
+    \ 'sync_scroll_type': 'middle',
+    \ 'hide_yaml_meta': 1,
+    \ 'sequence_diagrams': {},
+    \ 'flowchart_diagrams': {}
+    \ }
+let g:mkdp_markdown_css = ''
+let g:mkdp_highlight_css = ''
+let g:mkdp_port = ''
+let g:mkdp_page_title = '「${name}」'
+
+
+" ===
+" snippet
+" ===
+let g:UltiSnipsExpandTrigger='<tab>'
+let g:UltiSnipsJumpForwardTrigger='<tab>'
+let g:UltiSnipsJumpBackwardTrigger='<S-tab>'
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/Ultisnips/']
