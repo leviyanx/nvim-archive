@@ -1,0 +1,6 @@
+#
+*.swp
+plugged/
+autoload/
+colors/
+.netrwhist
