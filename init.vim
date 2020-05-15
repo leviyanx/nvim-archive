@@ -1,4 +1,7 @@
-" ============= copy from default.vim =========================
+" ============
+" copy from default.vim
+" ============
+
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
@@ -130,19 +133,87 @@ if has('langmap') && exists('+langremap')
   " compatible).
   set nolangremap
 endif
-" ================default config end=========================
+
+
+" ============
+" personal setting
+" ============
+
+" ======
+" cross-platform setting
+" ======
 
 set nocompatible
 filetype off " vundle require
 
 set encoding=utf-8
+" set number " show line number
+
+syntax on
+
+" set cursorcolumn
+set cursorline
+
+
+" ======
+" windows
+" ======
+
+if has('win32')
+
+" ======
+" windows - common settings
+" ======
+
+set guifont=Courier\ New:h10 " font
+colorscheme morning 
+
+
+" ======
+" windows - plugin
+" ======
+
+call plug#begin('~/AppData/Local/nvim/plugged')
+
+Plug 'junegunn/fzf.vim'
+Plug 'dracula/vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'majutsushi/tagbar'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
+
+call plug#end()
+
+" ===
+" Plugin settings
+" ===
+
+set number relativenumber
+
+
+" ======
+" linux
+" ======
+
+elseif has ('unix')
+
+" ======
+" linux - common settings
+" ======
+
 set number " show line number
 colorscheme default " color theme
 syntax on
 
+
 " highlight column and line
 " set cursorcolumn
 set cursorline
+
+
+" ======
+" linux - plugin
+" ======
 
 call plug#begin('~/.config/nvim/plugged')
 
@@ -165,17 +236,19 @@ Plug 'SirVer/ultisnips'
 
 call plug#end()
 
+" ===
+" Plugin settings
+" ===
 
-
+" ===
 " python support
+" ===
 let g:python_host_prog='/usr/bin/python2'
 let g:python3_host_prog='/usr/bin/python3'
-
 
 " ===
 " airline
 " ===
-
 " theme for airline
 let g:airline_theme='bubblegum'
 
@@ -183,11 +256,9 @@ let g:airline_theme='bubblegum'
 " latex math format
 let g:vim_markdown_math = 1
 
-
 " ===
 " markdown preview
 " ===
-
 " path of chromium to preview markdown
 let g:mkdp_path_to_chrome = '/opt/google/chrome/google-chrome'    
 let g:mkdp_auto_start = 0
@@ -213,8 +284,7 @@ let g:mkdp_preview_options = {
 let g:mkdp_markdown_css = ''
 let g:mkdp_highlight_css = ''
 let g:mkdp_port = ''
-let g:mkdp_page_title = '「${name}」'
-
+let g:mkdp_page_title = '?${name}?'
 
 " ===
 " snippet
@@ -223,3 +293,7 @@ let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<S-tab>'
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/Ultisnips/']
+
+endif
+
+
