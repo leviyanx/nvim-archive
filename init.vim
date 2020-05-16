@@ -242,11 +242,15 @@ Plug 'iamcco/markdown-preview.nvim'
 " ultisnippet
 Plug 'SirVer/ultisnips'
 
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 call plug#end()
 
 " ======
 " linux - plugin settings
 " ======
+
+
+set number relativenumber
 
 " ===
 " python support
