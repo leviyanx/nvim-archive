@@ -135,48 +135,56 @@ if has('langmap') && exists('+langremap')
 endif
 
 
+
+
+
+
 " ============
 " personal setting
 " ============
+if exists('g:vscode') " vscode settings
+
+
+
+else " ordinary setting
+
+
 
 " ======
 " cross-platform setting
 " ======
-
 set nocompatible
 filetype off " vundle require
-
 set encoding=utf-8
-" set number " show line number
-
 syntax on
-
+set number
 " set cursorcolumn
 set cursorline
+
 
 
 " ======
 " windows
 " ======
-
 if has('win32')
+
+
 
 " ======
 " windows - common settings
 " ======
-
 set guifont=Courier\ New:h10 " font
 colorscheme morning 
+
 
 
 " ======
 " windows - plugin
 " ======
-
 call plug#begin('~/AppData/Local/nvim/plugged')
 
 Plug 'junegunn/fzf.vim'
-Plug 'dracula/vim'
+Plug 'dracula/vim', {'as': 'dracula'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'majutsushi/tagbar'
@@ -184,37 +192,32 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
 call plug#end()
 
+
+
 " ===
 " windows - plugin settings
 " ===
+set relativenumber
 
-set number relativenumber
 
 
 " ======
-" linux
+" unix
 " ======
-
 elseif has ('unix')
 
-" ======
-" linux - common settings
-" ======
-
-set number " show line number
-colorscheme default " color theme
-syntax on
-
-
-" highlight column and line
-" set cursorcolumn
-set cursorline
 
 
 " ======
-" linux - plugin
+" unix - common settings
 " ======
+colorscheme dracula
 
+
+" ======
+" unix - plugin
+" ======
+"
 " Auto load for first time uses
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
 	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
@@ -223,8 +226,9 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 
+" Plugins begin ->
 call plug#begin('~/.config/nvim/plugged')
-
+" fzf
 Plug 'junegunn/fzf.vim'
 " theme fot vim
 Plug 'dracula/vim'
@@ -238,19 +242,20 @@ Plug 'plasticboy/vim-markdown'
 Plug 'mzlogin/vim-markdown-toc' " toc
 " markdown preview
 Plug 'iamcco/markdown-preview.nvim'
-
 " ultisnippet
 Plug 'SirVer/ultisnips'
-
+" number
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 call plug#end()
+" <- Plugins end
+
+
 
 " ======
-" linux - plugin settings
+" unix - plugin settings
 " ======
-
-
 set number relativenumber
+
 
 " ===
 " python support
@@ -258,21 +263,22 @@ set number relativenumber
 let g:python_host_prog='/usr/bin/python2'
 let g:python3_host_prog='/usr/bin/python3'
 
+
 " ===
 " airline
 " ===
-" theme for airline
-let g:airline_theme='bubblegum'
+let g:airline_theme='bubblegum'  " theme for airline
 
 
 " latex math format
-let g:vim_markdown_math = 1
+let g:vim_markdown_math = 1  
+
 
 " ===
 " markdown preview
 " ===
 " path of chromium to preview markdown
-let g:mkdp_path_to_chrome = '/opt/google/chrome/google-chrome'    
+let g:mkdp_path_to_chrome = 'firefox'    
 let g:mkdp_auto_start = 0
 let g:mkdp_auto_close = 1
 let g:mkdp_refresh_slow = 0
@@ -298,6 +304,7 @@ let g:mkdp_highlight_css = ''
 let g:mkdp_port = ''
 let g:mkdp_page_title = '?${name}?'
 
+
 " ===
 " snippet
 " ===
@@ -306,6 +313,10 @@ let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<S-tab>'
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/Ultisnips/']
 
-endif
+
+
+endif " os setting end 
+endif " vscode setting end
+
 
 
