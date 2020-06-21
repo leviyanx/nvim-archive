@@ -1,6 +1,6 @@
-" ============
-" copy from default.vim
-" ============
+" =============================
+" === copy from default.vim ===
+" =============================
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
@@ -139,19 +139,16 @@ endif
 
 
 
-" ============
-" personal setting
-" ============
-if exists('g:vscode') " vscode settings
+" ========================
+" === personal setting ===
+" ========================
 
-
-
-else " ordinary setting
-
-
+" ===============================
+" === cross-platform settings ===
+" ===============================
 
 " ======
-" cross-platform setting
+" ====== common settings
 " ======
 set nocompatible
 filetype off " vundle require
@@ -161,17 +158,38 @@ set number
 " set cursorcolumn
 set cursorline
 
+" ======
+" ====== mapping
+" ======
+
+" leader
+let mapleader = "\<space>"
+
+" Copy to system clipboard
+vnoremap Y "+y
+
+" Replace sec with 'jk;
+inoremap jk <esc>
+
+" fzf 
+nnoremap <leader>f :Files<CR>
 
 
-" ======
-" windows
-" ======
+" ===
+" System
+" ===
+
+
+
+" ===============
+" === windows ===
+" ===============
 if has('win32')
 
 
 
 " ======
-" windows - common settings
+" ====== common settings (windows)
 " ======
 set guifont=Courier\ New:h10 " font
 colorscheme morning 
@@ -179,7 +197,7 @@ colorscheme morning
 
 
 " ======
-" windows - plugin
+" ====== plugin (windows)
 " ======
 call plug#begin('~/AppData/Local/nvim/plugged')
 
@@ -195,29 +213,32 @@ call plug#end()
 
 
 " ===
-" windows - plugin settings
+" plugin settings (windows)
 " ===
 set relativenumber
 
 
 
-" ======
-" unix
-" ======
+" ============
+" === unix ===
+" ============
 elseif has ('unix')
 
 
 
 " ======
-" unix - common settings
+" ====== common settings (unix)
 " ======
 colorscheme dracula
+set guifont=JetBrains\ Mono\ 14,Source\ Code\ Pro\ 14
+
 
 
 " ======
-" unix - plugin
+" ====== plugin (unix)
 " ======
-"
+
+
 " Auto load for first time uses
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
 	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
@@ -226,24 +247,30 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 
+
 " Plugins begin ->
 call plug#begin('~/.config/nvim/plugged')
-" fzf
-Plug 'junegunn/fzf.vim'
-" theme fot vim
-Plug 'dracula/vim'
+Plug 'junegunn/fzf.vim' " fzf
+
+" theme 
+Plug 'dracula/vim', {'as': 'dracula'}
+
 " airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'majutsushi/tagbar'
+
 " vim markdown
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'mzlogin/vim-markdown-toc' " toc
+
 " markdown preview
 Plug 'iamcco/markdown-preview.nvim'
+
 " ultisnippet
 Plug 'SirVer/ultisnips'
+
 " number
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 call plug#end()
@@ -252,7 +279,7 @@ call plug#end()
 
 
 " ======
-" unix - plugin settings
+" ====== plugin settings (unix)
 " ======
 set number relativenumber
 
@@ -316,7 +343,6 @@ let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/Ultisnips/']
 
 
 endif " os setting end 
-endif " vscode setting end
 
 
 
