@@ -1,32 +1,3 @@
-
-" ========================
-" === plugin (windows) ===
-" ========================
-if has('win32')
-
-call plug#begin('~/AppData/Local/nvim/plugged')
-
-Plug 'junegunn/fzf.vim'
-Plug 'dracula/vim', {'as': 'dracula'}
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'majutsushi/tagbar'
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
-
-call plug#end()
-
-" ======
-" ====== settings (windows)
-" ======
-set relativenumber
-
-
-
-" =====================
-" === plugin (unix) ===
-" =====================
-elseif has('unix')
-
 " Auto load for first time uses
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
 	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
@@ -119,4 +90,3 @@ let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<S-tab>'
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/Ultisnips/']
 
-endif " end os 
