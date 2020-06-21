@@ -166,12 +166,17 @@ set cursorline
 let mapleader = "\<space>"
 
 " Copy to system clipboard
-vnoremap Y "+y
+vnoremap <leader>y "+y
+" Paste from system clipboard
+nnoremap <leader>p "+p
 
 " Replace sec with 'jk;
 inoremap jk <esc>
 
+" ===
 " fzf 
+" ===
+" open file
 nnoremap <leader>f :Files<CR>
 
 
