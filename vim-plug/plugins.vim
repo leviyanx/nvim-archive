@@ -125,4 +125,4 @@ let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<S-tab>'
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/Ultisnips/']
 
-
+endif " end os 
