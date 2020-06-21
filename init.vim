@@ -145,6 +145,7 @@ endif
 
 " Alawys source thess
 source $HOME/.config/nvim/vim-plug/plugins.vim
+source $HOME/.config/nvim/key/mappings.vim
 
 " ===============================
 " === cross-platform settings ===
