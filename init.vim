@@ -147,6 +147,12 @@ endif
 source $HOME/.config/nvim/vim-plug/plugins.vim
 source $HOME/.config/nvim/key/mappings.vim
 
+" Source depending on if VSCode is our client
+if exists('g:vscode')
+else
+	source $HOME/.config/nvim/plug-config/fzf.vim
+endif
+
 " ===============================
 " === cross-platform settings ===
 " ===============================
@@ -161,32 +167,6 @@ syntax on
 set number
 " set cursorcolumn
 set cursorline
-
-" ======
-" ====== mapping
-" ======
-
-" leader
-let mapleader = "\<space>"
-
-" Copy to system clipboard
-vnoremap <leader>y "+y
-" Paste from system clipboard
-nnoremap <leader>p "+p
-
-" Replace sec with 'jk;
-inoremap jk <esc>
-
-" ===
-" fzf 
-" ===
-" open file
-nnoremap <leader>f :Files<CR>
-
-
-" ===
-" System
-" ===
 
 
 

@@ -9,12 +9,6 @@ nnoremap <leader>p "+p
 " Replace sec with 'jk;
 inoremap jk <esc>
 
-" ===
-" fzf 
-" ===
-" open file
-nnoremap <leader>f :Files<CR>
-
 
 " ===
 " System
