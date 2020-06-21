@@ -151,6 +151,7 @@ source $HOME/.config/nvim/key/mappings.vim
 if exists('g:vscode')
 else
 	source $HOME/.config/nvim/plug-config/fzf.vim
+	source $HOME/.config/nvim/plug-config/airline.vim
 endif
 
 " ===============================

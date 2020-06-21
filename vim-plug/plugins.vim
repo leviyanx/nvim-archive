@@ -76,12 +76,6 @@ let g:python_host_prog='/usr/bin/python2'
 let g:python3_host_prog='/usr/bin/python3'
 
 
-" ===
-" airline
-" ===
-let g:airline_theme='bubblegum'  " theme for airline
-
-
 " latex math format
 let g:vim_markdown_math = 1  
 
