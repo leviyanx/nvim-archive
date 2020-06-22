@@ -2,9 +2,15 @@ snippet sout "System.out.println()"
 System.out.println($0);
 endsnippet
 
-snippet class "create class" 
+snippet pucl "create class" 
 public class ${1:classname} {
-	public $1($2){
+	public $1(){
 	};
 };
+endsnippet
+
+snippet for "for loop"
+for (int ${1:var} = $2; $1 < $3; $1++) {
+	$4;
+}
 endsnippet
