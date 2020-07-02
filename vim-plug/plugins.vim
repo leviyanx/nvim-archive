@@ -11,6 +11,7 @@ Plug 'junegunn/fzf.vim' " fzf
 
 " theme 
 Plug 'dracula/vim', {'as': 'dracula'}
+Plug 'fratajczak/one-monokai-vim' 
 
 " airline
 Plug 'vim-airline/vim-airline'

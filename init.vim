@@ -152,6 +152,7 @@ if exists('g:vscode')
 else
 	source $HOME/.config/nvim/plug-config/fzf.vim
 	source $HOME/.config/nvim/plug-config/airline.vim
+	source $HOME/.config/nvim/plug-config/one-monokai.vim
 endif
 
 " ===============================
@@ -196,7 +197,9 @@ elseif has ('unix')
 " ======
 " ====== common settings (unix)
 " ======
-colorscheme dracula
+" colorscheme dracula
+" colorscheme monokai
+colorscheme one-monokai " need to set truecolor in konsole | or any terminal supports truecolor, otherwise, the background can't display as expected.
 set guifont=JetBrains\ Mono\ 14,Source\ Code\ Pro\ 14
 
 
