@@ -170,7 +170,10 @@ set number
 " set cursorcolumn
 set cursorline
 
-
+" tap -> 4 space
+set tabstop=4
+set expandtab
+set autoindent
 
 " ===============
 " === windows ===
