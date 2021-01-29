@@ -202,8 +202,8 @@ elseif has ('unix')
 " ======
 " colorscheme dracula
 " colorscheme monokai
-colorscheme one-monokai " need to set truecolor in konsole | or any terminal supports truecolor, otherwise, the background can't display as expected.
-set guifont=JetBrains\ Mono\ 14,Source\ Code\ Pro\ 14
+" colorscheme one-monokai " need to set truecolor in konsole | or any terminal supports truecolor, otherwise, the background can't display as expected.
+" set guifont=JetBrains\ Mono\ 14,Source\ Code\ Pro\ 14
 
 
 endif " os setting end 
