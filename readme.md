@@ -1,1 +1,1 @@
-# This is my config for neovim
+This repo which stores configs for neovim has been archived. The new repo is this.
